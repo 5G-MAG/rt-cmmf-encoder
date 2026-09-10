@@ -19,7 +19,7 @@
 <p align="center">
   <a href="https://www.5g-mag.com/reference-tools/content-delivery">Project page</a> &nbsp;&middot;&nbsp;
   <a href="https://github.com/5G-MAG/rt-cmmf-encoder/issues">Issues</a> &nbsp;&middot;&nbsp;
-  <a href="https://www.5g-mag.com/community/contributing">Contributing</a>
+  <a href="https://www.5g-mag.com/contributing">Contributing</a>
 </p>
 
 ---
@@ -98,7 +98,7 @@ git clone https://github.com/5G-MAG/rt-cmmf-encoder.git
 
 Contributions are welcome. How to raise an issue, fork the repository and open a pull request, and
 the Contributor License Agreement required before code can be merged, are described at
-<https://www.5g-mag.com/community/contributing>.
+<https://www.5g-mag.com/contributing>.
 
 ## License
 
