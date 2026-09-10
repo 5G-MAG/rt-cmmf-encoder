@@ -45,21 +45,15 @@ created or discarded without touching the others.
 This repository is the encoder side: source data in, CMMF bitstreams out. The decoder side and the
 delivery architecture are out of scope here.
 
-## Specification and conformance
+## Specification
 
-Built against **ETSI TS 103 973 V1.1.1 (2024-10)**. A version, not a release name: a reader checking
-against a different version of the same document will disagree for no reason.
+Built against **ETSI TS 103 973 V1.1.1 (2024-10)**, a version rather than a release name.
 
-Which clauses are implemented, partially implemented or still absent is recorded on the project
-page, not here: <https://www.5g-mag.com/reference-tools/content-delivery>. The repository carries the
-code; the conformance record is the reader-facing statement of what that code does and does not do,
-and it belongs where readers look for it.
+Clause-by-clause coverage, and what is still absent, is recorded on the project page rather than
+here: <https://www.5g-mag.com/reference-tools/content-delivery>
 
-## Implementation status
-
-This is the repository's initial commit. No encoder code has landed yet, which is what the
-Experimental status badge above reports. Install, build and usage instructions will be added with
-the first code, and the conformance record on the project page will be updated as clauses land.
+This is the repository's initial commit, so no encoder code has landed yet. Install, build and usage
+instructions follow with the first code.
 
 ## Getting the source
 
