@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".github/banner.svg" width="100%" alt="5G-MAG Reference Tools, Multimedia Delivery Protocols: CMMF Encoder">
+  <img src=".github/banner.svg" width="100%" alt="5G-MAG Reference Tools, Content Delivery Protocols: CMMF Encoder">
 </p>
 
 <p align="center">
@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.5g-mag.com/reference-tools/multimedia">Project page</a> &nbsp;&middot;&nbsp;
+  <a href="https://www.5g-mag.com/reference-tools/content-delivery">Project page</a> &nbsp;&middot;&nbsp;
   <a href="https://github.com/5G-MAG/rt-cmmf-encoder/issues">Issues</a> &nbsp;&middot;&nbsp;
   <a href="https://www.5g-mag.com/community/contributing">Contributing</a>
 </p>
@@ -30,7 +30,7 @@
 |---|---|
 | **Implements** | ETSI TS 103 973 V1.1.1 (2024-10), *Coded Multisource Media Format (CMMF) for Content Distribution and Delivery* |
 | **Code type** | xCD-1, the code type that specification defines normatively in its annex A |
-| **Part of** | [Multimedia Delivery Protocols](https://www.5g-mag.com/reference-tools/multimedia), alongside [rt-libflute](https://github.com/5G-MAG/rt-libflute) |
+| **Part of** | [Content Delivery Protocols](https://www.5g-mag.com/reference-tools/content-delivery), alongside [rt-libflute](https://github.com/5G-MAG/rt-libflute) |
 
 ## Introduction
 
@@ -51,7 +51,7 @@ Built against **ETSI TS 103 973 V1.1.1 (2024-10)**. A version, not a release nam
 against a different version of the same document will disagree for no reason.
 
 Which clauses are implemented, partially implemented or still absent is recorded on the project
-page, not here: <https://www.5g-mag.com/reference-tools/multimedia>. The repository carries the
+page, not here: <https://www.5g-mag.com/reference-tools/content-delivery>. The repository carries the
 code; the conformance record is the reader-facing statement of what that code does and does not do,
 and it belongs where readers look for it.
 
