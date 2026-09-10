@@ -64,13 +64,10 @@ git clone https://github.com/5G-MAG/rt-cmmf-encoder.git
 
 ## Contributing
 
-Raise an issue, fork the repository, work on a branch, open a pull request. The full flow, and the
-Contributor License Agreement required before code can be merged, are described at
-<https://www.5g-mag.com/community/contributing>. Releases follow
-<https://www.5g-mag.com/community/release-process>.
+Contributions are welcome. How to raise an issue, fork the repository and open a pull request, and
+the Contributor License Agreement required before code can be merged, are described at
+<https://www.5g-mag.com/community/contributing>.
 
 ## License
 
-Distributed under the 5G-MAG Public License v1.0. See [LICENSE](LICENSE), and
-<https://www.5g-mag.com/license> for what that licence permits and the third-party dependencies it
-does not cover.
+Distributed under the 5G-MAG Public License v1.0. See [LICENSE](LICENSE).
