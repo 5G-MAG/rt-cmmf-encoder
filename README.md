@@ -52,15 +52,47 @@ Built against **ETSI TS 103 973 V1.1.1 (2024-10)**, a version rather than a rele
 Clause-by-clause coverage, and what is still absent, is recorded on the project page rather than
 here: <https://www.5g-mag.com/reference-tools/content-delivery>
 
-This is the repository's initial commit, so no encoder code has landed yet. Install, build and usage
-instructions follow with the first code.
+This is the repository's initial commit, so no encoder code has landed yet. The sections below are
+the skeleton every 5G-MAG reference tool uses, with `{{...}}` marking what the first code fills in.
 
-## Getting the source
+## Install dependencies
+
+```bash
+{{sudo apt install ...}}
+```
+
+## Downloading
 
 ```bash
 cd ~
 git clone https://github.com/5G-MAG/rt-cmmf-encoder.git
 ```
+
+## Building
+
+```bash
+{{build commands}}
+```
+
+## Installing
+
+```bash
+{{install commands}}
+```
+
+## Running
+
+```bash
+{{run commands}}
+```
+
+## Configuration
+
+{{Configuration file locations, the options an operator sets, and their defaults.}}
+
+## Development
+
+{{Branch model, how to run the tests, and how many cases the suite has.}}
 
 ## Contributing
 
