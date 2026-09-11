@@ -1,0 +1,66 @@
+{
+    "cmmfConfigurationInformationLocator": "https://www.example.com/cmmf_ci_manifest.mpd",
+    "bitstreamVersion": 0,
+    "contentSourceType": "001b",
+    "codeType": 0,
+    "profile": "org.etsi.cmmf.a",
+    "blockSizeToBlockNumSymbolsMaps": [
+        {
+            "blockSizeMin": 0,
+            "blockSizeMax": 2097152,
+            "blockNumSymbols": 8
+        }
+    ],
+    "xcdInformation": {
+        "signalSystematicSymbols": true,
+        "coefficientInformation": {
+            "coefficientVectorMaps": [
+                {
+                    "variantId": "cmmf-a",
+                    "numSymbols": 8,
+                    "fieldSizeExp": 1,
+                    "coefficientVectors": [
+                        "01000101b",
+                        "11100101b",
+                        "01101110b",
+                        "00100000b",
+                        "11001100b",
+                        "00010010b",
+                        "01011000b",
+                        "01010110b"
+                    ]
+                },
+                {
+                    "variantId": "cmmf-b",
+                    "numSymbols": 8,
+                    "fieldSizeExp": 1,
+                    "coefficientVectors": [
+                        "01000100b",
+                        "11101000b",
+                        "00110001b",
+                        "00110100b",
+                        "00101101b",
+                        "00110010b",
+                        "11010110b",
+                        "10001010b"
+                    ]
+                },
+                {
+                    "variantId": "cmmf-c",
+                    "numSymbols": 8,
+                    "fieldSizeExp": 1,
+                    "coefficientVectors": [
+                        "01111011b",
+                        "01010100b",
+                        "00010110b",
+                        "10101110b",
+                        "00100100b",
+                        "10101101b",
+                        "01111010b",
+                        "10001101b"
+                    ]
+                }
+            ]
+        }
+    }
+}
