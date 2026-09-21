@@ -72,6 +72,8 @@ git clone https://github.com/5G-MAG/rt-cmmf-encoder.git
 cd rt-cmmf-encoder
 ```
 
+Requires Go 1.26.2 or later (the version `go.mod` pins).
+
 Build the application:
 
 ```bash
