@@ -1,4 +1,4 @@
-module gitlab-sfo.dolby.net/interferex/cmmf_encoder
+module github.com/5G-MAG/rt-cmmf-encoder
 
 go 1.26.2
 

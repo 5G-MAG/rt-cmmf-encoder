@@ -22,7 +22,7 @@ package cmmf_encoder
 import (
 	"fmt"
 
-	"gitlab-sfo.dolby.net/interferex/cmmf_encoder/cmmf_encoder/simd_xor"
+	"github.com/5G-MAG/rt-cmmf-encoder/cmmf_encoder/simd_xor"
 )
 
 type Packet struct {
