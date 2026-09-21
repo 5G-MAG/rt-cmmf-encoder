@@ -38,6 +38,7 @@ func isValidFile(filename string) (bool, error) {
 		if errors.Is(err, os.ErrNotExist) {
 			return false, fmt.Errorf("file %s does not exist", filename)
 		}
+		return false, fmt.Errorf("cannot read file %s: %w", filename, err)
 	}
 	if fStat.IsDir() {
 		return false, fmt.Errorf("%s is a directory", filename)
