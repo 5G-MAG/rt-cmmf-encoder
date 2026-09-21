@@ -84,11 +84,23 @@ func (b *BitstreamHeader) Serialize() []byte {
 	binary.BigEndian.PutUint64(header[offset:], b.contentSourceSize)
 	offset += 8
 
-	// Bits 64-66: `content_source_type` (3 bits).
+	// Bits 64-66: `content_source_type` (3 bits), from the configuration.
 	// Bits 67-68: `reserved` & `b_content_source_split`. Both set to 0
 	// Bits 69-72: `code_type`. As of ETSI v1.1.1, xCD-1 code type is represented as 0.
 	// Bit 73: `b_rfc5052` - set to 0.
-	header[offset] = 1 << 5
+	// NewValidatedETSIConfig defaults this to "000b" and rejects any value outside
+	// table 39, so a validated config always parses. A config built directly, as the
+	// tests do, may leave it unset; treat that as "not indicated".
+	var contentSourceType uint8
+	if b.encoderConfig.ContentSourceType != nil {
+		v, err := parseBitString(*b.encoderConfig.ContentSourceType)
+		if err != nil {
+			slog.Warn("BitstreamHeader: unparseable content_source_type, writing 000b",
+				"value", *b.encoderConfig.ContentSourceType, "error", err)
+		}
+		contentSourceType = v
+	}
+	header[offset] = contentSourceType << 5
 	offset += 1 // offset within the byte now 2
 
 	// Bits 74-81: `block_count_minus1`. We only allow for 1 block, so set to 0.

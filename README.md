@@ -58,60 +58,96 @@ Please download and install the Go binary release for your platform from [here](
 
 Installation instructions can be found at https://go.dev/doc/install. 
 
-## Usage 
+## Usage
 
 ### Command-line example application
 
-The `cmd` folder contains a command-line application that serves to illustrate the end-to-end workflow of reading some 
-arbitrary bytes from a source, and creating an output file containing the encoded bitstream. 
+The `cmd` folder contains a command-line application that serves to illustrate the end-to-end workflow of
+reading some arbitrary bytes from a source, and creating an output file containing the encoded bitstream.
+
+Clone the repository and change into it:
+
+```bash
+git clone https://github.com/5G-MAG/rt-cmmf-encoder.git
+cd rt-cmmf-encoder
+```
+
+Requires Go 1.26.2 or later (the version `go.mod` pins).
+
+Build the application:
+
+```bash
+go build -o etsi_encoder ./cmd/etsi_encoder
+```
+
+List its options:
+
+```bash
+./etsi_encoder -h
+```
 
 ```
-❯ go run cmd/etsi_encoder/main.go -h
-Usage of main:
+Usage of ./etsi_encoder:
   -enc-config string
-        path to the encoder config file
+    	path to the encoder config file
   -enc-output string
-        path to the encoded output file
+    	path to the encoded output file
   -src-content string
-        path to the source content file
-
-❯ go run cmd/etsi_encoder/main.go -enc-config ./cmd/etsi_encoder/example_encoder_config.json -src-content ./cmd/etsi_encoder/gutenberg_aliceinwonderland.txt -enc-output ./out.dat
+    	path to the source content file
 ```
 
-The command-line application can also be built as follows: 
+Encode the bundled example, a plain text file, using the bundled example configuration:
 
-```
-❯ pwd
-<...>/cmd/etsi_encoder
-
-❯ go build main.go
-
-❯ ./main -h
-Usage of ./main:
-  -enc-config string
-        path to the encoder config file
-  -enc-output string
-        path to the encoded output file
-  -src-content string
-        path to the source content file
-
+```bash
+./etsi_encoder \
+  -enc-config ./cmd/etsi_encoder/example_encoder_config.json \
+  -src-content ./cmd/etsi_encoder/gutenberg_aliceinwonderland.txt \
+  -enc-output ./out.dat
 ```
 
-### Unit tests 
+The application reads the first 16384 bytes of the source file and writes eight encoded packets, each 2053
+bytes, behind a 56-byte bitstream header, giving a 16480-byte `out.dat`. Encoding is deterministic, so the
+same source and configuration always produce the same bytes:
 
-In order to execute the full set of unit tests in this repository, please do the following: 
+```bash
+sha256sum ./out.dat
+```
 
 ```
-❯ go test -v ./...
+bfea6078c6c7ccb36ffccce464ee62970baaff9a1c47bb05afc3706cb0986f00  ./out.dat
 ```
 
-### Documentation 
+To run without building a binary first, substitute `go run ./cmd/etsi_encoder` for `./etsi_encoder` in the
+commands above:
 
-Documentation for this package can be viewed by executing the following command: 
+```bash
+go run ./cmd/etsi_encoder -h
+```
 
+### Unit tests
+
+To execute the full set of unit tests in this repository:
+
+```bash
+go test ./...
 ```
-❯ go doc -http
+
+Add `-v` to list each case as it runs:
+
+```bash
+go test -v ./...
 ```
+
+### Documentation
+
+Documentation for this package can be viewed by running:
+
+```bash
+go doc -http
+```
+
+This prints the address to open in a browser. The first run downloads the documentation server and can take a
+few minutes before it prints anything.
 
 ## Implementation Notes 
 
