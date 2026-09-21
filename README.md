@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".github/banner.svg" width="100%" alt="5G-MAG Reference Tools, Content Delivery Protocols: CMMF Encoder">
+  <img src=".github/banner.svg" width="100%" alt="Reference Tools · Content Delivery Protocols: CMMF Encoder">
 </p>
 
 <p align="center">
