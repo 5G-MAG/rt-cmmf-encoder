@@ -26,9 +26,11 @@ import (
 )
 
 func bitstreamHeader_getETSIConfigWithProfile(profile, profileDescription string) *ETSIConfig {
+	contentSourceType := "001b"
 	return &ETSIConfig{
 		Profile:            &profile,
 		ProfileDescription: &profileDescription,
+		ContentSourceType:  &contentSourceType,
 	}
 }
 

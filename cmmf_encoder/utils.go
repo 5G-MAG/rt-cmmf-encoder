@@ -18,6 +18,12 @@
 
 package cmmf_encoder
 
+import (
+	"fmt"
+	"strconv"
+	"strings"
+)
+
 // ceilDivision returns the ceil of `numerator`/`divisor`.
 // It will return 0 if `divisor = 0`.
 func ceilDivision(numerator, divisor int) int {
@@ -111,4 +117,15 @@ func splitByte(octet, offset byte) (left, right byte) {
 	right = (octet & rightMask) << offsetComplement
 
 	return left, right
+}
+
+// parseBitString converts a configuration value written as a binary literal with a
+// trailing "b", such as "011b", into its numeric value. The config schema uses this
+// form for every fixed-width bitfield.
+func parseBitString(s string) (uint8, error) {
+	v, err := strconv.ParseUint(strings.TrimSuffix(s, "b"), 2, 8)
+	if err != nil {
+		return 0, fmt.Errorf("%q is not a binary literal of the form \"011b\": %w", s, err)
+	}
+	return uint8(v), nil
 }
