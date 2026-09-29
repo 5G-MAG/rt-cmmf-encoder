@@ -8,10 +8,10 @@
 </p>
 
 <p align="center">
-  <img alt="Status: experimental"
-    src="https://img.shields.io/badge/Status-Experimental-c0392b">
+  <img alt="Status: under development"
+    src="https://img.shields.io/badge/Status-Under%20Development-e67e22">
   <a href="https://github.com/5G-MAG/rt-cmmf-encoder/releases"><img alt="Version"
-    src="https://img.shields.io/github/v/release/5G-MAG/rt-cmmf-encoder?label=Version&sort=semver"></a>
+    src="https://img.shields.io/github/v/release/5G-MAG/rt-cmmf-encoder?label=Version"></a>
   <a href="LICENSE"><img alt="License: 5G-MAG Public License v1.0"
     src="https://img.shields.io/badge/License-5G--MAG%20PL%20v1.0-blue"></a>
 </p>
@@ -30,7 +30,7 @@
 |---|---|
 | **Implements** | ETSI TS 103 973 V1.2.2 (2026-05), *Coded Multisource Media Format (CMMF) for Content Distribution and Delivery* |
 | **Code type** | xCD-1, the code type that specification defines normatively in its annex A |
-| **Part of** | [Content Delivery Protocols](https://www.5g-mag.com/reference-tools/content-delivery), alongside [rt-libflute](https://github.com/5G-MAG/rt-libflute) |
+| **Part of** | [Content Delivery Protocols](https://www.5g-mag.com/reference-tools/content-delivery), alongside [rt-libflute](https://github.com/5G-MAG/rt-libflute), [rt-mbms-client](https://github.com/5G-MAG/rt-mbms-client), [rt-media-origin](https://github.com/5G-MAG/rt-media-origin) |
 
 ## Introduction
 
@@ -50,27 +50,30 @@ There is also a command-line application that takes in some source text (as well
 file) and writes out a file containing the encoded bitstream.
 
 The latest version (as of this revision of the encoder) of the encoder configuration manifest/schema can be found 
-[here](https://www.etsi.org/deliver/etsi_ts/103900_103999/103973/01.02.02_60/). 
+[here](https://www.etsi.org/deliver/etsi_ts/103900_103999/103973/01.02.02_60/).
+
+As of this writing, only `code type 0`, `xCD-1` is supported. Please refer to `Annex A` in the technical specification 
+for more details. 
+
+In addition, not all of the optional features described in the technical spec have been implemented.
 
 ## Install dependencies
 
 Please download and install the Go binary release for your platform from [here](https://go.dev/dl/). 
 
-Installation instructions can be found at https://go.dev/doc/install. 
+Installation instructions can be found at https://go.dev/doc/install.
 
-## Usage
-
-### Command-line example application
-
-The `cmd` folder contains a command-line application that serves to illustrate the end-to-end workflow of
-reading some arbitrary bytes from a source, and creating an output file containing the encoded bitstream.
+## Downloading
 
 Clone the repository and change into it:
+
 
 ```bash
 git clone https://github.com/5G-MAG/rt-cmmf-encoder.git
 cd rt-cmmf-encoder
 ```
+
+## Building
 
 Requires Go 1.26.2 or later (the version `go.mod` pins).
 
@@ -79,6 +82,11 @@ Build the application:
 ```bash
 go build -o etsi_encoder ./cmd/etsi_encoder
 ```
+
+## Running
+
+The `cmd` folder contains a command-line application that serves to illustrate the end-to-end workflow of
+reading some arbitrary bytes from a source, and creating an output file containing the encoded bitstream.
 
 List its options:
 
@@ -124,6 +132,8 @@ commands above:
 go run ./cmd/etsi_encoder -h
 ```
 
+## Development
+
 ### Unit tests
 
 To execute the full set of unit tests in this repository:
@@ -148,14 +158,6 @@ go doc -http
 
 This prints the address to open in a browser. The first run downloads the documentation server and can take a
 few minutes before it prints anything.
-
-## Implementation Notes 
-
-As of this writing, only `code type 0`, `xCD-1` is supported. Please refer to `Annex A` in the technical specification 
-for more details. 
-
-In addition, not all of the optional features described in the technical spec have been implemented.  
-
 
 ## Contributing
 
